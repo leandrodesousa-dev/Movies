@@ -9,16 +9,23 @@
 import Foundation
 import UIKit
 
-let movie1 = Movies(titleMovie: "007 - Spectre", descriptionMovie: "ok", imageMovie: imageMovie("movie1"))
-let movie2 = Movies(titleMovie: "Star Wars", descriptionMovie: "ok", imageMovie: imageMovie("movie2"))
-let movie3 = Movies(titleMovie: "Deadly Impact", descriptionMovie: "ok", imageMovie: imageMovie("movie3"))
-let movie4 = Movies(titleMovie: "Deadpoll", descriptionMovie: nil, imageMovie: imageMovie("movie4"))
-let movie5 = Movies(titleMovie: "The Revenant", descriptionMovie: nil, imageMovie: imageMovie("movie5"))
-let movie6 = Movies(titleMovie: "A Herdeira", descriptionMovie: "ok", imageMovie: imageMovie("movie6"))
-let movie7 = Movies(titleMovie: "Point Break", descriptionMovie: "ok", imageMovie: imageMovie("movie7"))
-let movie8 = Movies(titleMovie: "Pay the Ghost", descriptionMovie: nil, imageMovie: imageMovie("movie8"))
-let movie9 = Movies(titleMovie: "Tarzan", descriptionMovie: "ok", imageMovie: imageMovie("movie9"))
-let movie10 = Movies(titleMovie: "Hardcore", descriptionMovie: "ok", imageMovie: imageMovie("movie10"))
+
+func getContentMovie() -> [Movies]?{
+    let moviesList: [Movies]? = [movie1,movie2,movie3,movie4,movie5,movie6,movie7,movie8,movie9,movie10]
+
+    return moviesList
+}
+
+fileprivate let movie1 = Movies(titleMovie: "007 - Spectre", descriptionMovie: "ok", imageMovie: imageMovie("movie1"))
+fileprivate let movie2 = Movies(titleMovie: "Star Wars", descriptionMovie: "ok", imageMovie: imageMovie("movie2"))
+fileprivate let movie3 = Movies(titleMovie: "Deadly Impact", descriptionMovie: "ok", imageMovie: imageMovie("movie3"))
+fileprivate let movie4 = Movies(titleMovie: "Deadpoll", descriptionMovie: nil, imageMovie: imageMovie("movie4"))
+fileprivate let movie5 = Movies(titleMovie: "The Revenant", descriptionMovie: nil, imageMovie: imageMovie("movie5"))
+fileprivate let movie6 = Movies(titleMovie: "A Herdeira", descriptionMovie: "ok", imageMovie: imageMovie("movie6"))
+fileprivate let movie7 = Movies(titleMovie: "Point Break", descriptionMovie: "ok", imageMovie: imageMovie("movie7"))
+fileprivate let movie8 = Movies(titleMovie: "Pay the Ghost", descriptionMovie: nil, imageMovie: imageMovie("movie8"))
+fileprivate let movie9 = Movies(titleMovie: "Tarzan", descriptionMovie: "ok", imageMovie: imageMovie("movie9"))
+fileprivate let movie10 = Movies(titleMovie: "Hardcore", descriptionMovie: "ok", imageMovie: imageMovie("movie10"))
 
 
 func imageMovie(_ imageNamed: String) -> UIImage{
