@@ -38,16 +38,19 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MoviesList
+       
+        contentCellMovies(indexPath, cell)
+       
+        return cell 
+    }
+    
+    fileprivate func contentCellMovies(_ indexPath: IndexPath, _ cell: MoviesList) {
         if let moviesVerified = moviesArray{
             let moviesContent = moviesVerified[indexPath.row]
             cell.titleMovie.text = moviesContent.titleMovie
             cell.descriptionMovie.text = moviesContent.descriptionMovie
             cell.imageMovie.image = moviesContent.imageMovie
         }
-       
-        return cell 
     }
-    
-
 
 }
