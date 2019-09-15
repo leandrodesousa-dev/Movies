@@ -37,7 +37,7 @@ class MoviesListContentController: UIViewController, UITableViewDelegate,UITable
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MoviesListCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MoviesListCellController
        
         contentCellMovies(indexPath, cell)
        
@@ -66,7 +66,7 @@ class MoviesListContentController: UIViewController, UITableViewDelegate,UITable
         }
     }
     
-    fileprivate func contentCellMovies(_ indexPath: IndexPath, _ cell: MoviesListCell) {
+    fileprivate func contentCellMovies(_ indexPath: IndexPath, _ cell: MoviesListCellController) {
         if let moviesVerified = moviesArray{
             let moviesContent = moviesVerified[indexPath.row]
             cell.titleMovie.text = moviesContent.titleMovie
