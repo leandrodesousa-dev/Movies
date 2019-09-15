@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
+class MoviesListContentController: UIViewController, UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -36,20 +36,37 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         }
     }
     
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let DetailMoviesController = segue.destination as? DetailMovies {
+//            guard let indexPath = tableView.indexPathForSelectedRow else {
+//                // Nenhum item selecionado:
+//                movieEditViewController.
+//                return
+//            }
+//            let movie = allMovies[indexPath.row]
+//
+//            movieEditViewController.movie = movie
+//        }
+//    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MoviesList
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MoviesListCell
        
         contentCellMovies(indexPath, cell)
        
         return cell 
     }
     
-    fileprivate func contentCellMovies(_ indexPath: IndexPath, _ cell: MoviesList) {
+    fileprivate func contentCellMovies(_ indexPath: IndexPath, _ cell: MoviesListCell) {
         if let moviesVerified = moviesArray{
             let moviesContent = moviesVerified[indexPath.row]
             cell.titleMovie.text = moviesContent.titleMovie
             cell.descriptionMovie.text = moviesContent.descriptionMovie
             cell.imageMovie.image = moviesContent.imageMovie
+            cell.imageMovie.layer.masksToBounds = true
+            cell.imageMovie.layer.cornerRadius = 52
+            print(cell.imageMovie.frame.height)
+            
         }
     }
 
