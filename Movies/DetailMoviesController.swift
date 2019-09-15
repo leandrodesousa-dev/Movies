@@ -14,27 +14,21 @@ class DetailMoviesController: UIViewController {
     @IBOutlet weak var titleMovieDetail: UILabel!
     @IBOutlet weak var descriptionMovieDetail: UILabel!
     
+     var moviesDetailReceived: Movies!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        dateMovies()
     }
     
-    let moviesList = getContentMovie()
-    
-//   fileprivate func movieViewDetail(){
-//    let indexPath = 
-//        if let MovieVerified = moviesList {
-//          let movieContent = MovieVerified[indexPath.row]
-//           imageViewDetail.image = movieContent.imageMovie
-//        titleMovieDetail.text = movieContent.titleMovie
-//            descriptionMovieDetail.text = movieContent.descriptionMovie
-//        }
-//    }
-    
-    func movieIndex(ofRow indexPath: IndexPath) -> IndexPath{
-        let indexPath = indexPath
-        return indexPath
+    fileprivate func dateMovies() {
+        if let moviesDetailContent = moviesDetailReceived{
+            imageViewDetail.image = moviesDetailContent.imageMovie
+            titleMovieDetail.text = moviesDetailContent.titleMovie
+            if let description = moviesDetailReceived.descriptionMovie{
+                descriptionMovieDetail.text = description
+            }
+        }
     }
-    
 }
